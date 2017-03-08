@@ -8,6 +8,7 @@ from .models import Question, Choice
 def index(request):
     last_question_list = Question.objects.order_by('-pub_date')[:3]
     context = {'latest_question_list': last_question_list}
+    print('^^^==', context)
     return render(request, 'pills/index.html', context)
 
 
